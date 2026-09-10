@@ -1,0 +1,1125 @@
+/* =========================================================
+   NOVA BITE - HOJA DE ESTILOS PRINCIPAL
+   Tecnologías: CSS3 + Bootstrap 5
+   ========================================================= */
+
+
+/* =========================================================
+   1. GOOGLE FONT
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* =========================================================
+   2. VARIABLES DE MARCA
+   ========================================================= */
+
+:root {
+    /* Colores principales de NOVA BITE */
+    --nova-coral: #ff6b4a;
+    --nova-coral-dark: #e95738;
+    --nova-coral-light: #ff8a70;
+
+    --nova-cream: #fff4e6;
+    --nova-cream-dark: #f7e4cd;
+
+    --nova-charcoal: #1f2933;
+    --nova-charcoal-light: #52606d;
+
+    --nova-lime: #a7c957;
+    --nova-lime-dark: #8fb43d;
+
+    /* Colores generales */
+    --nova-white: #ffffff;
+    --nova-black: #111111;
+    --nova-gray: #f5f7f8;
+
+    /* Sombras */
+    --nova-shadow-sm: 0 4px 15px rgba(31, 41, 51, 0.08);
+    --nova-shadow-md: 0 10px 30px rgba(31, 41, 51, 0.12);
+    --nova-shadow-lg: 0 20px 50px rgba(31, 41, 51, 0.16);
+
+    /* Bordes */
+    --nova-radius-sm: 10px;
+    --nova-radius-md: 18px;
+    --nova-radius-lg: 28px;
+
+    /* Transiciones */
+    --nova-transition: all 0.3s ease;
+
+    /* Tipografías */
+    --nova-heading-font: 'Montserrat', sans-serif;
+    --nova-body-font: 'Poppins', sans-serif;
+}
+
+
+/* =========================================================
+   3. CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--nova-body-font);
+    color: var(--nova-charcoal);
+
+    background-color: var(--nova-cream);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--nova-transition);
+}
+
+::selection {
+    background-color: var(--nova-coral);
+    color: var(--nova-white);
+}
+
+
+/* =========================================================
+   4. TIPOGRAFÍA
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--nova-heading-font);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--nova-charcoal);
+}
+
+p {
+    color: var(--nova-charcoal-light);
+}
+
+
+/* Texto pequeño decorativo */
+
+.nova-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-family: var(--nova-heading-font);
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    color: var(--nova-coral);
+}
+
+
+/* Títulos de sección */
+
+.nova-section-title {
+    max-width: 700px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.nova-section-title h2 {
+    margin-bottom: 15px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.nova-section-title p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   5. NAVBAR
+   ========================================================= */
+
+.nova-navbar {
+    padding: 18px 0;
+
+    background-color: rgba(255, 244, 230, 0.94) !important;
+
+    border-bottom: 1px solid rgba(31, 41, 51, 0.08);
+
+    backdrop-filter: blur(12px);
+
+    transition: var(--nova-transition);
+
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.nova-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: var(--nova-heading-font);
+    font-size: 1.4rem;
+    font-weight: 800;
+
+    color: var(--nova-charcoal);
+}
+
+.nova-navbar .navbar-brand span {
+    color: var(--nova-coral);
+}
+
+.nova-navbar .navbar-brand img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+}
+
+
+/* Enlaces */
+
+.nova-navbar .nav-link {
+    position: relative;
+
+    margin-left: 10px;
+
+    font-family: var(--nova-heading-font);
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--nova-charcoal) !important;
+}
+
+.nova-navbar .nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--nova-coral);
+
+    transform: translateX(-50%);
+
+    transition: var(--nova-transition);
+}
+
+.nova-navbar .nav-link:hover::after,
+.nova-navbar .nav-link.active::after {
+    width: 70%;
+}
+
+.nova-navbar .nav-link:hover,
+.nova-navbar .nav-link.active {
+    color: var(--nova-coral) !important;
+}
+
+
+/* Botón hamburguesa */
+
+.nova-navbar .navbar-toggler {
+    border: none;
+    padding: 8px;
+}
+
+.nova-navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   6. HERO
+   ========================================================= */
+
+.nova-hero {
+    position: relative;
+
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 0 80px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(167, 201, 87, 0.35),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(255, 107, 74, 0.15),
+            transparent 30%
+        ),
+        var(--nova-cream);
+}
+
+
+/* Decoración circular */
+
+.nova-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    top: -150px;
+    right: -150px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 107, 74, 0.1);
+}
+
+
+/* Texto */
+
+.nova-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.nova-hero h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(2.7rem, 6vw, 5.5rem);
+
+    letter-spacing: -2px;
+}
+
+.nova-hero h1 span {
+    color: var(--nova-coral);
+}
+
+.nova-hero p {
+    max-width: 600px;
+
+    margin-bottom: 35px;
+
+    font-size: 1.05rem;
+}
+
+
+/* Imagen principal */
+
+.nova-hero-image {
+    position: relative;
+    z-index: 2;
+
+    border-radius: var(--nova-radius-lg);
+
+    overflow: hidden;
+
+    box-shadow: var(--nova-shadow-lg);
+
+    transform: rotate(2deg);
+
+    transition: var(--nova-transition);
+}
+
+.nova-hero-image:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.nova-hero-image img {
+    width: 100%;
+    height: 520px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   7. BOTONES PERSONALIZADOS
+   ========================================================= */
+
+.btn {
+    font-family: var(--nova-heading-font);
+    font-weight: 700;
+
+    border-radius: 50px;
+
+    padding: 12px 28px;
+
+    transition: var(--nova-transition);
+}
+
+
+/* Botón principal */
+
+.btn-nova {
+    color: var(--nova-white);
+
+    background-color: var(--nova-coral);
+
+    border: 2px solid var(--nova-coral);
+
+    box-shadow: 0 8px 20px rgba(255, 107, 74, 0.25);
+}
+
+.btn-nova:hover {
+    color: var(--nova-white);
+
+    background-color: var(--nova-coral-dark);
+
+    border-color: var(--nova-coral-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(255, 107, 74, 0.35);
+}
+
+
+/* Botón secundario */
+
+.btn-nova-outline {
+    color: var(--nova-charcoal);
+
+    background-color: transparent;
+
+    border: 2px solid var(--nova-charcoal);
+}
+
+.btn-nova-outline:hover {
+    color: var(--nova-white);
+
+    background-color: var(--nova-charcoal);
+
+    border-color: var(--nova-charcoal);
+
+    transform: translateY(-3px);
+}
+
+
+/* Botón lima */
+
+.btn-nova-lime {
+    color: var(--nova-charcoal);
+
+    background-color: var(--nova-lime);
+
+    border: 2px solid var(--nova-lime);
+
+    box-shadow: 0 8px 20px rgba(167, 201, 87, 0.25);
+}
+
+.btn-nova-lime:hover {
+    color: var(--nova-charcoal);
+
+    background-color: var(--nova-lime-dark);
+
+    border-color: var(--nova-lime-dark);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   8. CARRUSEL
+   ========================================================= */
+
+.nova-carousel {
+    border-radius: var(--nova-radius-lg);
+
+    overflow: hidden;
+
+    box-shadow: var(--nova-shadow-lg);
+}
+
+.nova-carousel .carousel-item {
+    position: relative;
+
+    height: 650px;
+}
+
+.nova-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* Degradado para mejorar legibilidad */
+
+.nova-carousel .carousel-item::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(17, 17, 17, 0.85),
+            rgba(17, 17, 17, 0.1)
+        );
+}
+
+
+/* Contenido del slide */
+
+.nova-carousel .carousel-caption {
+    right: auto;
+    left: 8%;
+
+    bottom: 12%;
+
+    max-width: 620px;
+
+    z-index: 3;
+
+    text-align: left;
+}
+
+.nova-carousel .carousel-caption h2 {
+    margin-bottom: 15px;
+
+    color: var(--nova-white);
+
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.nova-carousel .carousel-caption p {
+    margin-bottom: 25px;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* Indicadores */
+
+.nova-carousel .carousel-indicators [data-bs-target] {
+    width: 30px;
+    height: 4px;
+
+    margin: 0 5px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    opacity: 0.6;
+}
+
+.nova-carousel .carousel-indicators .active {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   9. SECCIONES GENERALES
+   ========================================================= */
+
+.nova-section {
+    padding: 100px 0;
+}
+
+.nova-section-light {
+    background-color: var(--nova-white);
+}
+
+.nova-section-cream {
+    background-color: var(--nova-cream);
+}
+
+.nova-section-dark {
+    background-color: var(--nova-charcoal);
+}
+
+
+/* =========================================================
+   10. TARJETAS / CARDS
+   ========================================================= */
+
+.nova-card {
+    height: 100%;
+
+    padding: 35px;
+
+    background-color: var(--nova-white);
+
+    border: 1px solid rgba(31, 41, 51, 0.06);
+
+    border-radius: var(--nova-radius-md);
+
+    box-shadow: var(--nova-shadow-sm);
+
+    transition: var(--nova-transition);
+}
+
+.nova-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--nova-shadow-md);
+
+    border-color: rgba(255, 107, 74, 0.2);
+}
+
+.nova-card-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+
+    background-color: rgba(255, 107, 74, 0.12);
+
+    color: var(--nova-coral);
+
+    font-size: 1.5rem;
+}
+
+.nova-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   11. TARJETAS DE PRODUCTO / COMIDA
+   ========================================================= */
+
+.nova-product-card {
+    height: 100%;
+
+    background-color: var(--nova-white);
+
+    border-radius: var(--nova-radius-md);
+
+    overflow: hidden;
+
+    box-shadow: var(--nova-shadow-sm);
+
+    transition: var(--nova-transition);
+}
+
+.nova-product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--nova-shadow-md);
+}
+
+.nova-product-card img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.nova-product-card:hover img {
+    transform: scale(1.05);
+}
+
+.nova-product-content {
+    padding: 25px;
+}
+
+.nova-product-content h3 {
+    margin-bottom: 8px;
+
+    font-size: 1.3rem;
+}
+
+.nova-product-price {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    font-family: var(--nova-heading-font);
+    font-size: 1.1rem;
+    font-weight: 800;
+
+    color: var(--nova-coral);
+}
+
+
+/* =========================================================
+   12. BADGES
+   ========================================================= */
+
+.nova-badge {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-family: var(--nova-heading-font);
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    background-color: var(--nova-lime);
+
+    color: var(--nova-charcoal);
+}
+
+
+/* =========================================================
+   13. FORMULARIO DE CONTACTO
+   ========================================================= */
+
+.nova-form-wrapper {
+    padding: 45px;
+
+    background-color: var(--nova-white);
+
+    border-radius: var(--nova-radius-lg);
+
+    box-shadow: var(--nova-shadow-md);
+}
+
+.nova-form-wrapper .form-label {
+    margin-bottom: 8px;
+
+    font-family: var(--nova-heading-font);
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--nova-charcoal);
+}
+
+.nova-form-wrapper .form-control,
+.nova-form-wrapper .form-select {
+    min-height: 52px;
+
+    padding: 12px 16px;
+
+    background-color: #fafafa;
+
+    border: 1px solid #dfe3e6;
+
+    border-radius: 12px;
+
+    color: var(--nova-charcoal);
+
+    transition: var(--nova-transition);
+}
+
+.nova-form-wrapper textarea.form-control {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+.nova-form-wrapper .form-control:focus,
+.nova-form-wrapper .form-select:focus {
+    background-color: var(--nova-white);
+
+    border-color: var(--nova-coral);
+
+    box-shadow: 0 0 0 4px rgba(255, 107, 74, 0.12);
+}
+
+
+/* Mensajes de validación */
+
+.nova-error {
+    display: none;
+
+    margin-top: 6px;
+
+    font-size: 0.82rem;
+
+    color: #dc3545;
+}
+
+.nova-error.show {
+    display: block;
+}
+
+
+/* Mensaje de éxito */
+
+.nova-success {
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 16px 20px;
+
+    border-radius: 12px;
+
+    background-color: rgba(167, 201, 87, 0.18);
+
+    border: 1px solid rgba(143, 180, 61, 0.35);
+
+    color: var(--nova-charcoal);
+}
+
+.nova-success.show {
+    display: block;
+
+    animation: novaFadeIn 0.4s ease;
+}
+
+
+/* =========================================================
+   14. INFORMACIÓN / CTA
+   ========================================================= */
+
+.nova-cta {
+    position: relative;
+
+    padding: 80px 30px;
+
+    overflow: hidden;
+
+    border-radius: var(--nova-radius-lg);
+
+    background-color: var(--nova-coral);
+
+    box-shadow: var(--nova-shadow-lg);
+}
+
+.nova-cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -120px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nova-cta h2,
+.nova-cta p {
+    position: relative;
+
+    z-index: 2;
+}
+
+.nova-cta h2 {
+    color: var(--nova-white);
+}
+
+.nova-cta p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================================
+   15. FOOTER
+   ========================================================= */
+
+.nova-footer {
+    padding: 70px 0 25px;
+
+    background-color: var(--nova-charcoal);
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nova-footer-brand {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    font-family: var(--nova-heading-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+
+    color: var(--nova-white);
+}
+
+.nova-footer-brand span {
+    color: var(--nova-coral);
+}
+
+.nova-footer p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* Títulos del footer */
+
+.nova-footer h5 {
+    margin-bottom: 20px;
+
+    color: var(--nova-white);
+
+    font-size: 1rem;
+}
+
+
+/* Enlaces */
+
+.nova-footer a {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.nova-footer a:hover {
+    color: var(--nova-coral);
+}
+
+
+/* Redes sociales */
+
+.nova-social {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.nova-social a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.08);
+
+    color: var(--nova-white);
+
+    transition: var(--nova-transition);
+}
+
+.nova-social a:hover {
+    background-color: var(--nova-coral);
+
+    color: var(--nova-white);
+
+    transform: translateY(-3px);
+}
+
+
+/* Copyright */
+
+.nova-footer-bottom {
+    margin-top: 50px;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   16. BOTÓN "VOLVER ARRIBA"
+   ========================================================= */
+
+#btnVolverArriba {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: var(--nova-coral);
+
+    color: var(--nova-white);
+
+    font-size: 1.1rem;
+
+    box-shadow: var(--nova-shadow-md);
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition: var(--nova-transition);
+
+    z-index: 999;
+}
+
+#btnVolverArriba.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+#btnVolverArriba:hover {
+    background-color: var(--nova-coral-dark);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   17. ANIMACIONES
+   ========================================================= */
+
+@keyframes novaFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nova-fade-in {
+    animation: novaFadeIn 0.7s ease forwards;
+}
+
+
+/* =========================================================
+   18. RESPONSIVE - TABLETS
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .nova-navbar {
+        padding: 14px 0;
+    }
+
+    .nova-navbar .navbar-nav {
+        padding-top: 20px;
+    }
+
+    .nova-navbar .nav-link {
+        margin-left: 0;
+        padding: 10px 0 !important;
+    }
+
+    .nova-navbar .nav-link::after {
+        left: 0;
+
+        transform: none;
+    }
+
+    .nova-hero {
+        padding: 80px 0 60px;
+    }
+
+    .nova-hero-image {
+        margin-top: 50px;
+
+        transform: none;
+    }
+
+    .nova-carousel .carousel-item {
+        height: 550px;
+    }
+
+    .nova-section {
+        padding: 80px 0;
+    }
+}
+
+
+/* =========================================================
+   19. RESPONSIVE - CELULARES
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .nova-hero {
+        min-height: auto;
+
+        padding: 60px 0 50px;
+    }
+
+    .nova-hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .nova-hero-image img {
+        height: 350px;
+    }
+
+    .nova-carousel .carousel-item {
+        height: 500px;
+    }
+
+    .nova-carousel .carousel-caption {
+        left: 7%;
+        right: 7%;
+
+        bottom: 10%;
+    }
+
+    .nova-carousel .carousel-caption h2 {
+        font-size: 2rem;
+    }
+
+    .nova-section {
+        padding: 65px 0;
+    }
+
+    .nova-form-wrapper {
+        padding: 25px 20px;
+    }
+
+    .nova-cta {
+        padding: 60px 20px;
+    }
+
+    #btnVolverArriba {
+        right: 18px;
+        bottom: 18px;
+
+        width: 45px;
+        height: 45px;
+    }
+}

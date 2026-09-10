@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160" width="500" height="160">
+  <!-- Fondo opcional suave -->
+  <rect width="500" height="160" rx="20" fill="#FFF4E6"/>
+
+  <!-- Grupo Ícono: Hamburguesa Minimalista -->
+  <g transform="translate(35, 30)">
+    <!-- Pan Superior -->
+    <path d="M 15 42 A 35 35 0 0 1 85 42 Z" fill="#FF6B4A"/>
+    <!-- Semillas/Sésamo -->
+    <circle cx="38" cy="24" r="2.5" fill="#FFF4E6"/>
+    <circle cx="50" cy="18" r="2.5" fill="#FFF4E6"/>
+    <circle cx="62" cy="24" r="2.5" fill="#FFF4E6"/>
+    
+    <!-- Queso / Carne -->
+    <rect x="10" y="47" width="80" height="8" rx="4" fill="#1F2933"/>
+    
+    <!-- Pan Inferior -->
+    <rect x="18" y="60" width="64" height="10" rx="5" fill="#FF6B4A"/>
+
+    <!-- Destello / Estrella (NOVA) -->
+    <path d="M 75 5 L 78 17 L 90 20 L 78 23 L 75 35 L 72 23 L 60 20 L 72 17 Z" fill="#A7C957"/>
+  </g>
+
+  <!-- Tipografía NOVA BITE -->
+  <text x="145" y="102" font-family="'Montserrat', 'Segoe UI', sans-serif" font-size="54" font-weight="800" fill="#1F2933" letter-spacing="2">NOVA</text>
+  <text x="310" y="102" font-family="'Montserrat', 'Segoe UI', sans-serif" font-size="54" font-weight="600" fill="#FF6B4A" letter-spacing="2">BITE</text>
+</svg>
